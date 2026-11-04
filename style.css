@@ -12,3 +12,10 @@ nav{display:flex;gap:28px;color:#ccc;font-size:14px}nav a:hover{color:var(--yell
 footer{padding:28px 6%;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;color:#777;font-size:12px}
 @media(max-width:850px){nav{display:none}.nav{padding:0 5%}.hero{grid-template-columns:1fr;padding:70px 5%}.hero-card{min-height:240px}.cards{grid-template-columns:1fr 1fr}.about,.contact{grid-template-columns:1fr;gap:25px;padding:70px 5%}.section{padding:75px 5%}}
 @media(max-width:550px){.cards{grid-template-columns:1fr}.hero h1{letter-spacing:-2px}.nav-btn{padding:9px 12px}.hero-card{display:none}.card p{min-height:auto}footer{flex-direction:column;gap:15px}}
+
+/* DATECH original logo */
+.nav .logo{display:flex;align-items:center;height:100%;width:132px;flex:0 0 132px;overflow:hidden}
+.nav .logo img{display:block;width:100%;height:68px;object-fit:contain}
+.hero-logo{display:block;width:min(210px,75%);height:205px;object-fit:contain;margin:8px auto 0}
+.brand-mark{margin-top:-2px}
+@media(max-width:550px){.nav .logo{width:118px;flex-basis:118px}.nav .logo img{height:62px}}
