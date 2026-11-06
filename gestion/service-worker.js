@@ -6,6 +6,7 @@ const SHELL = [
   '/gestion/app.js',
   '/gestion/manifest.webmanifest',
   '/gestion/icon.svg',
+  '/gestion/logo.svg',
   '/gestion/icon-192.svg',
   '/gestion/icon-512.svg'
 ];
