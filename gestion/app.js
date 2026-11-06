@@ -164,3 +164,26 @@ async function printInvoice(id) {
   w.document.write(`<!doctype html><html lang="fr"><meta charset="utf-8"><title>Facture ${esc(inv.invoice_number)}</title><style>body{font:14px Arial,sans-serif;color:#172534;padding:40px;max-width:850px;margin:auto}header{display:flex;justify-content:space-between;border-bottom:3px solid #15313b;padding-bottom:20px}h1{color:#173b43}.muted{color:#657483}table{width:100%;border-collapse:collapse;margin:35px 0}th,td{text-align:left;border-bottom:1px solid #ddd;padding:12px}th{background:#f3f6f7}.total{text-align:right;font-size:20px;font-weight:bold}.bottom{margin-top:60px;color:#657483;border-top:1px solid #ddd;padding-top:18px}@media print{button{display:none}body{padding:0}}</style><header><div><h1>${esc(s.business_name||'DATECH')}</h1><div>${esc(s.address||'')}</div><div>${esc(s.phone||'')} · ${esc(s.email||'')}</div><div>ICE: ${esc(s.ice||'—')} · IF: ${esc(s.if_number||'—')}</div></div><div><h2>FACTURE</h2><b>${esc(inv.invoice_number)}</b><p>Date : ${date(inv.invoice_date)}</p><p>Échéance : ${date(inv.due_date)}</p></div></header><h3>Client</h3><div>${esc(client?.name||'Client')}</div><div>${esc(client?.address||'')}</div><div>${esc(client?.phone||'')} ${client?.ice?`· ICE ${esc(client.ice)}`:''}</div><table><thead><tr><th>Description</th><th>Qté</th><th>Prix unitaire</th><th>Total</th></tr></thead><tbody>${(items||[]).map(i=>`<tr><td>${esc(i.description)}</td><td>${esc(i.quantity)}</td><td>${money(i.unit_price)}</td><td>${money(i.line_total)}</td></tr>`).join('')}</tbody></table><p>Sous-total : ${money(inv.subtotal)}</p><p>Remise : ${money(inv.discount)}</p><p>TVA (${esc(inv.tax_rate)}%) : ${money(inv.tax_amount)}</p><p class="total">Total : ${money(inv.total)}</p><div class="bottom">Merci pour votre confiance — ${esc(s.business_name||'DATECH')}</div><script>window.onload=()=>window.print()<\/script></html>`);w.document.close();
 }
 
+// Installable on supported desktop browsers; app data continues to use live Supabase requests.
+let pendingInstall = null;
+const installButton = $('#install-app');
+window.addEventListener('beforeinstallprompt', event => {
+  event.preventDefault();
+  pendingInstall = event;
+  installButton.classList.remove('hidden');
+});
+installButton.addEventListener('click', async () => {
+  if (!pendingInstall) return;
+  pendingInstall.prompt();
+  await pendingInstall.userChoice;
+  pendingInstall = null;
+  installButton.classList.add('hidden');
+});
+window.addEventListener('appinstalled', () => {
+  pendingInstall = null;
+  installButton.classList.add('hidden');
+});
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(() => {}));
+}
+
