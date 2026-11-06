@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101d2a">
+  <meta name="description" content="DATECH GESTION PRO — gestion commerciale privée">
+  <title>DATECH GESTION PRO</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div id="login-screen" class="login-screen">
+    <form id="login-form" class="login-card">
+      <div class="brand"><span class="brand-icon">D</span><span>DATECH <b>GESTION PRO</b></span></div>
+      <p class="eyebrow">ESPACE PRIVÉ</p><h1>Connectez-vous</h1>
+      <p class="muted">Accédez à votre gestion commerciale.</p>
+      <label>Email<input name="email" type="email" autocomplete="username" required></label>
+      <label>Mot de passe<input name="password" type="password" autocomplete="current-password" required></label>
+      <button class="button primary full" type="submit">Se connecter</button>
+      <p id="login-error" class="error" role="alert"></p>
+      <small>Connexion réservée au compte propriétaire.</small>
+    </form>
+  </div>
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-icon">D</span><span>DATECH <b>GESTION PRO</b></span></div>
+      <nav id="navigation" aria-label="Navigation principale">
+        <button data-page="dashboard" class="nav-link active"><i>⌂</i> Tableau de bord</button>
+        <button data-page="clients" class="nav-link"><i>♙</i> Clients</button>
+        <button data-page="products" class="nav-link"><i>◇</i> Produits & services</button>
+        <button data-page="stock" class="nav-link"><i>▤</i> Stock</button>
+        <button data-page="invoices" class="nav-link"><i>▧</i> Factures</button>
+        <button data-page="expenses" class="nav-link"><i>↘</i> Dépenses</button>
+        <button data-page="settings" class="nav-link"><i>⚙</i> Paramètres</button>
+      </nav>
+      <div class="sidebar-bottom"><span class="online-dot"></span> Données synchronisées<div class="user-row"><span id="user-email"></span><button id="logout" class="button ghost">Déconnexion</button></div></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><button id="menu-toggle" class="icon-button" aria-label="Ouvrir le menu">☰</button><div><p class="eyebrow">GESTION COMMERCIALE</p><h1 id="page-title">Tableau de bord</h1></div><div class="top-actions"><span class="today" id="today"></span><button id="language-toggle" class="button ghost">العربية</button></div></header>
+      <section id="page-content" class="content" aria-live="polite"></section>
+    </main>
+  </div>
+  <dialog id="editor" class="editor"><form id="editor-form" method="dialog"><div class="modal-head"><div><p class="eyebrow">DATECH GESTION PRO</p><h2 id="editor-title"></h2></div><button class="icon-button" value="cancel" aria-label="Fermer">×</button></div><div id="editor-fields" class="form-grid"></div><div class="modal-actions"><button class="button ghost" value="cancel">Annuler</button><button id="editor-save" class="button primary" value="default">Enregistrer</button></div><p id="editor-error" class="error"></p></form></dialog>
+  <script src="./app.js"></script>
+</body>
+</html>
+
