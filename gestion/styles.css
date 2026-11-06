@@ -5,3 +5,32 @@
 @media(max-width:400px){.cards{grid-template-columns:1fr 1fr}.stat-label{font-size:10px}.login-card{padding:26px 22px}}
 @media print{.sidebar,.topbar,.page-heading,.row-actions,.toolbar{display:none!important}.main-area{margin:0!important}.content{padding:0}.table-wrap,.panel,.stat-card{box-shadow:none}}
 
+
+/* Keep the installed Android app in the desktop layout. */
+@media (display-mode: standalone) and (max-width: 700px) {
+  .app { display: flex; min-width: 1024px; }
+  .sidebar { position: sticky; top: 0; inset: auto; flex: 0 0 252px; width: 252px; height: 100vh; transform: none; transition: none; box-shadow: none; }
+  .sidebar.open { transform: none; }
+  .main-area { flex: 1 0 772px; min-width: 772px; margin: 0 !important; }
+  .topbar { height: 102px; padding: 22px 35px; }
+  .topbar #menu-toggle { display: none; }
+  .topbar h1 { font-size: 22px; }
+  .today { display: inline; }
+  .content { max-width: none; padding: 30px 35px 50px; }
+  .cards { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .stat-card { padding: 19px; }
+  .stat-label { font-size: 12px; }
+  .stat-value { font-size: 24px; }
+  .dashboard-grid { grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr); }
+  .page-heading { align-items: center; flex-direction: row; }
+  .toolbar { width: auto; }
+  .search { min-width: 230px; flex: initial; }
+  .settings-grid { grid-template-columns: 1fr 1fr; }
+  .form-grid { grid-template-columns: 1fr 1fr; }
+  .field.full-width { grid-column: 1 / -1; }
+  .invoice-line { grid-template-columns: 2fr .65fr .9fr auto; }
+  .invoice-line .field:first-child { grid-column: auto; }
+  .rtl .sidebar { inset: auto; transform: none; box-shadow: none; }
+  .rtl .sidebar.open { transform: none; }
+  .rtl .main-area { margin: 0 !important; }
+}

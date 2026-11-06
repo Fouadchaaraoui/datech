@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "cc.datech.www.twa",
+        "sha256_cert_fingerprints": ["AD:27:0E:4E:40:F6:A0:70:73:06:38:C0:34:B9:DF:02:CD:BE:E0:93:FE:28:4C:94:3E:98:DF:54:FC:CC:94:CE"]
+      }
+    }]
