@@ -7,14 +7,14 @@
   <meta name="description" content="DATECH GESTION PRO — gestion commerciale privée">
   <title>DATECH GESTION PRO</title>
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="icon" href="./logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
   <div id="login-screen" class="login-screen">
     <form id="login-form" class="login-card">
-      <div class="brand"><span class="brand-icon">D</span><span>DATECH <b>GESTION PRO</b></span></div>
+      <div class="brand"><img class="brand-logo" src="./logo.svg" alt="DATECH"><span>DATECH <b>GESTION PRO</b></span></div>
       <p class="eyebrow">ESPACE PRIVÉ</p><h1>Connectez-vous</h1>
       <p class="muted">Accédez à votre gestion commerciale.</p>
       <label>Email<input name="email" type="email" autocomplete="username" required></label>
@@ -26,7 +26,7 @@
   </div>
   <div id="app" class="app hidden">
     <aside class="sidebar">
-      <div class="brand"><span class="brand-icon">D</span><span>DATECH <b>GESTION PRO</b></span></div>
+      <div class="brand"><img class="brand-logo" src="./logo.svg" alt="DATECH"><span>DATECH <b>GESTION PRO</b></span></div>
       <nav id="navigation" aria-label="Navigation principale">
         <button data-page="dashboard" class="nav-link active"><i>⌂</i> Tableau de bord</button>
         <button data-page="clients" class="nav-link"><i>♙</i> Clients</button>
