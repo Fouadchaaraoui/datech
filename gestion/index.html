@@ -6,6 +6,8 @@
   <meta name="theme-color" content="#101d2a">
   <meta name="description" content="DATECH GESTION PRO — gestion commerciale privée">
   <title>DATECH GESTION PRO</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -37,7 +39,7 @@
       <div class="sidebar-bottom"><span class="online-dot"></span> Données synchronisées<div class="user-row"><span id="user-email"></span><button id="logout" class="button ghost">Déconnexion</button></div></div>
     </aside>
     <main class="main-area">
-      <header class="topbar"><button id="menu-toggle" class="icon-button" aria-label="Ouvrir le menu">☰</button><div><p class="eyebrow">GESTION COMMERCIALE</p><h1 id="page-title">Tableau de bord</h1></div><div class="top-actions"><span class="today" id="today"></span><button id="language-toggle" class="button ghost">العربية</button></div></header>
+      <header class="topbar"><button id="menu-toggle" class="icon-button" aria-label="Ouvrir le menu">☰</button><div><p class="eyebrow">GESTION COMMERCIALE</p><h1 id="page-title">Tableau de bord</h1></div><div class="top-actions"><span class="today" id="today"></span><button id="install-app" class="button ghost hidden" type="button">Installer l’application</button><button id="language-toggle" class="button ghost">العربية</button></div></header>
       <section id="page-content" class="content" aria-live="polite"></section>
     </main>
   </div>
