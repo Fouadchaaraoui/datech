@@ -5,7 +5,9 @@ const SHELL = [
   '/gestion/styles.css',
   '/gestion/app.js',
   '/gestion/manifest.webmanifest',
-  '/gestion/icon.svg'
+  '/gestion/icon.svg',
+  '/gestion/icon-192.svg',
+  '/gestion/icon-512.svg'
 ];
 
 self.addEventListener('install', event => {
