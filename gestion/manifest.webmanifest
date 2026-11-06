@@ -1,0 +1,17 @@
+{
+  "id": "/gestion/",
+  "name": "DATECH GESTION PRO",
+  "short_name": "DATECH PRO",
+  "description": "Gestion commerciale DATECH, connectée à Supabase.",
+  "lang": "fr-MA",
+  "start_url": "/gestion/",
+  "scope": "/gestion/",
+  "display": "standalone",
+  "background_color": "#f5f7fa",
+  "theme_color": "#101d2a",
+  "categories": ["business", "productivity"],
+  "icons": [
+    { "src": "/gestion/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
+
